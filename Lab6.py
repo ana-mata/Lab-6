@@ -120,17 +120,17 @@ def create_standard_dsf_maze(S,walls):
             walls.pop(d)
 
 #Method that removes walls and creates the dsf using the union by size and compressed find methods
-def create_compressed_dsf_maze(S,walls):
+def create_compressed_dsf_maze(SC,wallsC):
     #If there is only one set it means that all cells are reacheable from any cell    
-    while len(dsfToSetList(S))>1:
+    while len(dsfToSetList(SC))>1:
         #Finds a wall to remove
-        d = random.randint(0,len(walls)-1)
+        dC = random.randint(0,len(wallsC)-1)
         #If the elements that share a wall are not in the same set, remove it
-        if find_c(S,walls[d][0]) != find_c(S,walls[d][1]):
+        if find_c(SC,wallsC[dC][0]) != find_c(SC,wallsC[dC][1]):
             #make the elements belong to the same set
-            union_by_size(S,walls[d][0],walls[d][1])
+            union_by_size(SC,wallsC[dC][0],wallsC[dC][1])
             #remove the wall
-            walls.pop(d)
+            wallsC.pop(dC)
         
 plt.close("all") 
 maze_rows = 10
