@@ -140,7 +140,7 @@ maze_cols = 15
 walls = wall_list(maze_rows,maze_cols)
 S = DisjointSetForest(maze_rows*maze_cols)
 
-#wall list 7 dsf for compressed method
+#wall list & dsf for compressed method
 wallsC = wall_list(maze_rows,maze_cols)
 SC = DisjointSetForest(maze_rows*maze_cols)
 
